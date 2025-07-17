@@ -84,17 +84,18 @@ const CharactersContainer = () => {
     <div>
       <StyledDiv $charContainer>
         {isLoading && <StyledP>Loading characters...</StyledP>}
-        {character.map((char) => (
-          <Character
-            key={char._id}
-            name={char.name}
-            imageUrl={char.imageUrl}
-            onClick={() => {
-              setSelectedCharacter(char);
-              setIsModalOpen(true);
-            }}
-          />
-        ))}
+        {!isLoading &&
+          character.map((char) => (
+            <Character
+              key={char._id}
+              name={char.name}
+              imageUrl={char.imageUrl}
+              onClick={() => {
+                setSelectedCharacter(char);
+                setIsModalOpen(true);
+              }}
+            />
+          ))}
         {isModalOpen &&
           createPortal(
             <Details

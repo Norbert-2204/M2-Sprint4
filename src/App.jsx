@@ -7,11 +7,15 @@ const light = {
   background: "#fff",
   color: "#000",
   blockBackground: "#a7a7a7",
+  paginationBackground: "#4c57fa",
+  activeBackground: "#ac57fa",
 };
 const dark = {
   background: "#000",
   color: "#fff",
   blockBackground: "#000",
+  paginationBackground: "#828283",
+  activeBackground: "#028283",
 };
 
 const GlobalStyle = createGlobalStyle`

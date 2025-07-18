@@ -1,11 +1,18 @@
-import { StyledButton, StyledDiv, StyledImg } from "../StyledElements";
+import {
+  StyledButton,
+  StyledDiv,
+  StyledH3,
+  StyledImg,
+} from "../StyledElements";
 
-const Character = () => {
+const Character = ({ name, imageUrl, onClick }) => {
   return (
     <StyledDiv $charBlock>
-      <StyledImg src="/druid2.jpg" />
-      <h3>Tekst</h3>
-      <StyledButton>LEARN MORE</StyledButton>
+      <StyledImg src={imageUrl} />
+      <StyledH3>{name}</StyledH3>
+      <StyledButton onClick={onClick} $learn>
+        LEARN MORE
+      </StyledButton>
     </StyledDiv>
   );
 };

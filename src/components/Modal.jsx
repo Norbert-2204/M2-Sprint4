@@ -6,6 +6,7 @@ import {
   StyledImg,
   StyledUl,
 } from "../StyledElements";
+import List from "./List";
 
 const Details = ({ onClick, character }) => {
   useEffect(() => {
@@ -21,46 +22,10 @@ const Details = ({ onClick, character }) => {
           <StyledImg $modal src={character.imageUrl} />
           <StyledH3>{character.name}</StyledH3>
           <StyledDiv $modal>
-            {character.films?.length > 0 && (
-              <StyledDiv $list>
-                <StyledH3 $modal>Films</StyledH3>
-                <StyledUl>
-                  {character.films.map((film) => (
-                    <li key={film}>{film}</li>
-                  ))}
-                </StyledUl>
-              </StyledDiv>
-            )}
-            {character.shortFilms?.length > 0 && (
-              <StyledDiv $list>
-                <StyledH3 $modal>Short Films</StyledH3>
-                <StyledUl>
-                  {character.shortFilms.map((film) => (
-                    <li key={film}>{film}</li>
-                  ))}
-                </StyledUl>
-              </StyledDiv>
-            )}
-            {character.videoGames?.length > 0 && (
-              <StyledDiv $list>
-                <StyledH3 $modal>Video Games</StyledH3>
-                <StyledUl>
-                  {character.videoGames.map((game) => (
-                    <li key={game}>{game}</li>
-                  ))}
-                </StyledUl>
-              </StyledDiv>
-            )}
-            {character.tvShows?.length > 0 && (
-              <StyledDiv $list>
-                <StyledH3 $modal>TV Shows</StyledH3>
-                <StyledUl>
-                  {character.tvShows.map((film) => (
-                    <li key={film}>{film}</li>
-                  ))}
-                </StyledUl>
-              </StyledDiv>
-            )}
+            <List character={character} type="films" desc="Films" />
+            <List character={character} type="shortFilms" desc="Short Films" />
+            <List character={character} type="videoGames" desc="Video Games" />
+            <List character={character} type="tvShows" desc="TV Shows" />
           </StyledDiv>
           <StyledButton $close onClick={onClick}>
             Close

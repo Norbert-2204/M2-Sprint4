@@ -5,7 +5,7 @@ import { useState } from "react";
 import { createPortal } from "react-dom";
 import Details from "./Modal";
 
-const totalPages = 147;
+const totalPages = 149;
 
 const CharactersContainer = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
